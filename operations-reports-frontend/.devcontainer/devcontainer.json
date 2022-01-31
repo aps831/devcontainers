@@ -1,0 +1,13 @@
+{
+	"name": "operations-reports-frontend",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"NODE_VERSION": "14-bullseye"
+		}
+	},	
+	"features": {
+		"github-cli": "latest",
+		"terraform": "1.0"	
+	}
+}

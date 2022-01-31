@@ -1,0 +1,22 @@
+{
+	"name": "java8-maven3",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"JAVA_VERSION": "8-buster",
+			"MAVEN_VERSION": "3.8.2",
+			"NODE_VERSION": "lts/*"
+		}
+	},	
+	"settings": { 
+		"java.jdt.ls.java.home": "/docker-java-home",
+		"maven.executable.path": "/usr/local/sdkman/candidates/maven/current/bin/mvn"
+	},
+	"features": {
+		"github-cli": "latest",
+		"docker-in-docker": {
+			"version": "latest",
+			"moby": true
+		}
+	}
+}

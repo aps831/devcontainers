@@ -1,0 +1,13 @@
+{
+	"name": "Ansible",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"PYTHON_VERSION": "3.9-buster",			
+			"NODE_VERSION": "lts/*"
+		}
+	},	
+	"features": {
+		"github-cli": "latest"
+	}
+}

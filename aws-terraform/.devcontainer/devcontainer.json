@@ -1,0 +1,16 @@
+{
+	"name": "Aws Terraform",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"DEBIAN_VERSION": "debian-11",
+			"NODE_VERSION": "lts/*"
+		}
+	},	
+	"features": {
+		"github-cli": "latest",
+		"terraform": {
+			"version": "1.1.2"
+		}
+	}	
+}
