@@ -1,4 +1,4 @@
-name: Generate Ansible Dev Container Image
+name: Generate Aws Terraform Dev Container Image
 on:
   workflow_dispatch:  
   schedule:
@@ -17,8 +17,8 @@ jobs:
       - run: |
           set -e
           
-          FOLDER_WITH_DOT_DEVCONTAINER="ansible"
-          IMAGE_NAME="devcontainers/ansible"
+          FOLDER_WITH_DOT_DEVCONTAINER="aws-terraform"
+          IMAGE_NAME="devcontainers/aws-terraform"
           IMAGE_REPOSITORY="$(echo "ghcr.io/${{ github.repository_owner }}/${IMAGE_NAME}:latest" | tr '[:upper:]' '[:lower:]')"
 
           # Enable buildkit, set output to plain text for logging
