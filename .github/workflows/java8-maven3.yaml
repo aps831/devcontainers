@@ -11,8 +11,6 @@ permissions:
   packages: write
 jobs:
   devcontainer:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: ./.github/workflows/generate-devcontainer-image.yaml
-        with:
-          devcontainername: "java8-maven3"
+    uses: ./.github/workflows/generate-devcontainer-image.yaml
+    with:
+      devcontainername: "java8-maven3"

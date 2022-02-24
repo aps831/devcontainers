@@ -11,8 +11,6 @@ permissions:
   packages: write
 jobs:
   devcontainer:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: ./.github/workflows/generate-devcontainer-image.yaml
-        with:
-          devcontainername: "ansible"
+    uses: ./.github/workflows/generate-devcontainer-image.yaml
+    with:
+      devcontainername: "ansible"
