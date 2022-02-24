@@ -17,3 +17,11 @@ Current known limitations with using devcontainers in VS Code are:
 
 * SSH keys that use a smart card do not work;
 * Surefire configuration is not passed to the Java test runner.
+
+### Security Scan
+
+A security scan can be run using `security_scan.sh`.
+
+### Static Analysis
+
+A static analysis can be run using `static_analysis.sh`.
