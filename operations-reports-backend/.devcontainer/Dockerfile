@@ -19,16 +19,19 @@ RUN apt-get update \
         lsb-release \        
         python3-distutils \
         python3-pip \
-        gettext-base \
-    && su vscode -c "python3 -m pip install setuptools && python3 -m pip install semgrep 2>&1" \
-    && wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add - \
+        gettext-base    
+
+RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add - \
     && echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list \
     && apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends trivy \
-    && cd /tmp \
-    && curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" \
+    && apt-get -y install --no-install-recommends trivy
+
+WORKDIR /tmp
+RUN wget -q "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -O "awscliv2.zip" \
     && unzip awscliv2.zip \
     && ./aws/install
 
+RUN su vscode -c "python3 -m pip install setuptools && python3 -m pip install semgrep 2>&1"
 RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g github-release-notes 2>&1"
+USER vscode

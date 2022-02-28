@@ -12,5 +12,5 @@ RUN if ! cat /etc/group | grep -e "^pip-global:" > /dev/null 2>&1; then groupadd
 
 ARG NODE_VERSION=""
 RUN su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"
-
 RUN su vscode -c "pip install semgrep ansible 2>&1"
+USER vscode

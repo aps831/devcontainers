@@ -16,9 +16,9 @@ RUN apt-get update \
         apt-transport-https \
         lsb-release \
         openssh-client \        
-        gnupg \
-    && su vscode -c "pip install crcmod semgrep 2>&1" \
-    && wget -qO - https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - \
+        gnupg
+    
+RUN wget -qO - https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add - \
     && wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add - \
     && echo "deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main" | sudo tee -a /etc/apt/sources.list.d/trivy.list \
     && echo "deb https://packages.cloud.google.com/apt cloud-sdk-$(lsb_release -c -s) main" > /etc/apt/sources.list.d/google-cloud-sdk.list \
@@ -31,5 +31,7 @@ RUN apt-get update \
     && gcloud config set component_manager/disable_update_check true \
     && gcloud config set metrics/environment github_docker_image       
 
+RUN su vscode -c "pip install crcmod semgrep 2>&1"
+USER vscode
 
     
