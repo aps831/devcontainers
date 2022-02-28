@@ -4,37 +4,7 @@ on:
   workflow_dispatch:     
   schedule:
     - cron: 0 4 1 * *
+  pull_request:
 jobs:
   build:
-    runs-on: ubuntu-latest    
-    permissions: 
-      contents: read
-      issues: write 
-    steps:
-      
-      - uses: actions/checkout@v2
-
-      - name: Run Trivy config scan
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: 'config'  
-          hide-progress: false        
-          ignore-unfixed: true
-          format: 'table'          
-          output: 'trivy-config-results.txt'
-          severity: 'HIGH,CRITICAL'
-          exit-code: 1
-          
-      - name: Create Github issue
-        if: ${{ failure() }}        
-        run: gh issue create --title "Review Trivy config audit" --body 'Run `trivy config --severity HIGH,CRITICAL .`'  
-        env:      
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
-      - name: Archive report
-        if: ${{ failure() }}
-        uses: actions/upload-artifact@v2
-        with:
-          name: report
-          path: |
-            trivy-config-results.txt       
+    uses: aps831/workflows/.github/workflows/trivy-config-audit.yaml@master

@@ -4,37 +4,7 @@ on:
   workflow_dispatch:     
   schedule:
     - cron: 0 4 1 * *
+  pull_request:    
 jobs:
   build:
-    runs-on: ubuntu-latest    
-    permissions: 
-      contents: read
-      issues: write 
-    steps:
-      
-      - uses: actions/checkout@v2
-
-      - name: Run Trivy fs scan
-        uses: aquasecurity/trivy-action@master
-        with:
-          scan-type: 'fs'     
-          hide-progress: false     
-          ignore-unfixed: true
-          format: 'table'          
-          output: 'trivy-fs-results.txt'
-          severity: 'HIGH,CRITICAL'
-          exit-code: 1
-          
-      - name: Create Github issue
-        if: ${{ failure() }}        
-        run: gh issue create --title "Review Trivy filesystem audit" --body 'Run `trivy fs --security-checks vuln --severity HIGH,CRITICAL .`'  
-        env:      
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Archive report
-        if: ${{ failure() }}
-        uses: actions/upload-artifact@v2
-        with:
-          name: report
-          path: |
-            trivy-fs-results.txt   
+    uses: aps831/workflows/.github/workflows/trivy-fs-audit.yaml@master
