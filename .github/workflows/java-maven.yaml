@@ -1,4 +1,4 @@
-name: Generate Java 11 Maven 3 Dev Container Image
+name: Generate Java Maven Dev Container Image
 on:
   workflow_dispatch:  
   schedule:
@@ -13,4 +13,4 @@ jobs:
   devcontainer:
     uses: ./.github/workflows/generate-devcontainer-image.yaml
     with:
-      devcontainername: "java11-maven3"
+      devcontainername: "java-maven"

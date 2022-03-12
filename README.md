@@ -5,9 +5,7 @@ This project defines devcontainer images for:
 * ansible;
 * aws-terraform;
 * gcp-terraform;
-* java8-maven3;
-* java11-maven3;
-* java17-maven3;
+* java-maven;
 * operations-reports-backend;
 * operations-reports-frontend.
 
