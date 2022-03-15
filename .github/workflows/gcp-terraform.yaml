@@ -6,6 +6,8 @@ on:
   push:
     branches:
       - 'master'
+    paths:
+      - 'gcp-terraform/**'    
 permissions:
   contents: read
   packages: write

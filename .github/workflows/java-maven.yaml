@@ -6,6 +6,8 @@ on:
   push:
     branches:
       - 'master'
+    paths:
+      - 'java-maven/**'      
 permissions:
   contents: read
   packages: write

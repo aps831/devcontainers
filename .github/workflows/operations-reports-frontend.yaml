@@ -6,6 +6,8 @@ on:
   push:
     branches:
       - 'master'
+    paths:
+      - 'operations-reports-frontend/**'  
 permissions:
   contents: read
   packages: write
