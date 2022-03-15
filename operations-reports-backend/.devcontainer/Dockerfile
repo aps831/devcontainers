@@ -1,14 +1,12 @@
-ARG JAVA_VERSION=""
-FROM mcr.microsoft.com/vscode/devcontainers/java:0-${JAVA_VERSION}
+ARG DEBIAN_VERSION=""
+FROM mcr.microsoft.com/vscode/devcontainers/base:${DEBIAN_VERSION}
+
+ENV USERNAME="vscode"
 
 COPY --chown=vscode:vscode settings.xml "/home/vscode/.m2/settings.xml"
+COPY install_nvm.sh .
 
-ARG MAVEN_VERSION=""
-RUN su vscode -c "umask 0002 && . /usr/local/sdkman/bin/sdkman-init.sh && sdk install maven \"${MAVEN_VERSION}\""
-    
-ARG NODE_VERSION=""
-RUN su vscode -c "umask 0002 && . /usr/local/share/nvm/nvm.sh && nvm install ${NODE_VERSION} 2>&1"
-
+# Packages
 RUN apt-get update \
     && apt-get -y install --no-install-recommends \
         fontconfig \
@@ -19,19 +17,53 @@ RUN apt-get update \
         lsb-release \        
         python3-distutils \
         python3-pip \
-        gettext-base    
+        gettext-base  
 
+# Trivy
 RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add - \
     && echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list \
     && apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends trivy
+    && apt-get -y install --no-install-recommends trivy        
 
+# Install sdkman
+ENV SDKMAN_DIR="/usr/local/sdkman"
+RUN groupadd -r sdkman \
+    && usermod -a -G sdkman ${USERNAME} \
+    && umask 0002 \
+    && curl -sSL "https://get.sdkman.io?rcupdate=false" | bash \
+    && chown -R :sdkman ${SDKMAN_DIR} \
+    && find ${SDKMAN_DIR} -type d | xargs -d '\n' chmod g+s \
+    && echo "export SDKMAN_DIR=$SDKMAN_DIR" >> /etc/bash.bashrc \
+    && echo "export PATH=$SDKMAN_DIR/candidates/java/current/bin:$SDKMAN_DIR/candidates/maven/current/bin:\$PATH" >> /etc/bash.bashrc \
+    && echo ". $SDKMAN_DIR/bin/sdkman-init.sh" >> /etc/bash.bashrc \
+    && sed -i '/sdkman_auto_env=false/c sdkman_auto_env=true' $SDKMAN_DIR/etc/config
+
+# Install nvm
+ARG NVM_VERSION
+ENV NVM_DIR="/usr/local/share/nvm"
+RUN groupadd -r nvm \
+   && usermod -a -G nvm ${USERNAME} \
+   && umask 0002 \
+   && mkdir -p ${NVM_DIR} \
+   && chown :nvm ${NVM_DIR} \
+   && chmod g+s ${NVM_DIR} \
+   && su ${USERNAME} -c ". install_nvm.sh" \
+   && echo "export NVM_DIR=\"$NVM_DIR\"" >> /etc/bash.bashrc \
+   && echo "export PATH=$NVM_DIR/current/bin:\$PATH" >> /etc/bash.bashrc \
+   && echo "[ -s $NVM_DIR/nvm.sh ] && . $NVM_DIR/nvm.sh" >> /etc/bash.bashrc \
+   && echo "[ -s $NVM_DIR/bash_completion ] && . $NVM_DIR/bash_completion" >> /etc/bash.bashrc
+
+# AWS
 WORKDIR /tmp
 RUN wget -q "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -O "awscliv2.zip" \
     && unzip awscliv2.zip \
     && ./aws/install
 
-RUN su vscode -c "python3 -m pip install setuptools && python3 -m pip install semgrep 2>&1"
-RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g github-release-notes 2>&1"
+# Install
+RUN su vscode -c "umask 0002 && . $SDKMAN_DIR/bin/sdkman-init.sh && sdk install java 2>&1 && sdk install maven 2>&1"    
+RUN su vscode -c "umask 0002 && . $NVM_DIR/nvm.sh && nvm install lts/* 2>&1"
+# RUN su vscode -c "umask 0002 && . $NVM_DIR/nvm.sh && npm install -g <package> 2>&1"
+RUN su vscode -c "python3 -m pip install setuptools && python3 -m pip install semgrep 2>&1"          
+
 USER vscode
