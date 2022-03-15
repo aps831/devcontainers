@@ -9,5 +9,11 @@
 	},	
 	"features": {
 		"github-cli": "latest"
+	},
+	"settings": {
+		"files.associations": {
+			"**/*.yaml": "ansible",
+			"**/*.yml": "ansible"
+		}
 	}
 }
