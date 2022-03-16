@@ -31,7 +31,7 @@ RUN wget -qO - https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-
     && gcloud config set component_manager/disable_update_check true \
     && gcloud config set metrics/environment github_docker_image       
 
-RUN su vscode -c "pip install crcmod semgrep 2>&1"
+RUN su vscode -c "pip install crcmod semgrep pre-commit 2>&1"
 USER vscode
 
     

@@ -64,6 +64,6 @@ RUN wget -q "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -O "awscl
 RUN su vscode -c "umask 0002 && . $SDKMAN_DIR/bin/sdkman-init.sh && sdk install java 2>&1 && sdk install maven 2>&1"    
 RUN su vscode -c "umask 0002 && . $NVM_DIR/nvm.sh && nvm install lts/* 2>&1"
 # RUN su vscode -c "umask 0002 && . $NVM_DIR/nvm.sh && npm install -g <package> 2>&1"
-RUN su vscode -c "python3 -m pip install setuptools && python3 -m pip install semgrep 2>&1"          
+RUN su vscode -c "python3 -m pip install setuptools && python3 -m pip install semgrep pre-commit 2>&1"          
 
 USER vscode

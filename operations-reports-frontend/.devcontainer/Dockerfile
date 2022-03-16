@@ -58,6 +58,6 @@ RUN wget -q "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -O "awscl
 
 # Install
 #RUN su vscode -c "source /usr/local/share/nvm/nvm.sh && npm install -g <package>" 2>&1
-RUN su vscode -c "python3 -m pip install setuptools && python3 -m pip install semgrep 2>&1"
+RUN su vscode -c "python3 -m pip install setuptools && python3 -m pip install semgrep pre-commit 2>&1"
 
 USER vscode

@@ -22,6 +22,6 @@ RUN wget -q "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -O "awscl
     && unzip awscliv2.zip \
     && ./aws/install
 
-RUN su vscode -c "pip install semgrep 2>&1"
+RUN su vscode -c "pip install semgrep pre-commit 2>&1"
 
 USER vscode    
