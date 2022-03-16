@@ -5,11 +5,13 @@
 		"args": {
 			"DEBIAN_VERSION": "debian-11",
 			"NVM_VERSION": "0.38.0",
-			"GIT_MKVER_VERSION": "1.2.2"
+			"GIT_MKVER_VERSION": "1.2.2",
+			"TERRAFORM_DOCS_VERSION": "0.16.0",
+			"TFLINT_VERSION": "0.34.1",
+			"TFSEC_VERSION": "1.9.1"	
 		}
 	},	
 	"features": {
-		"github-cli": "latest",
-		"terraform": "1.0"	
+		"github-cli": "latest"
 	}
 }
