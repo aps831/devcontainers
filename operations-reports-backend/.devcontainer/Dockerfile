@@ -60,6 +60,11 @@ RUN wget -q "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -O "awscl
     && unzip awscliv2.zip \
     && ./aws/install
 
+# Git Mkver
+ARG GIT_MKVER_VERSION
+RUN curl -L https://github.com/idc101/git-mkver/releases/download/v${GIT_MKVER_VERSION}/git-mkver-linux-amd64-${GIT_MKVER_VERSION}.tar.gz | tar xvz \
+    && mv git-mkver /usr/local/bin
+
 # Install
 RUN su vscode -c "umask 0002 && . $SDKMAN_DIR/bin/sdkman-init.sh && sdk install java 2>&1 && sdk install maven 2>&1"    
 RUN su vscode -c "umask 0002 && . $NVM_DIR/nvm.sh && nvm install lts/* 2>&1"

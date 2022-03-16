@@ -4,7 +4,8 @@
 		"dockerfile": "Dockerfile",
 		"args": {
 			"DEBIAN_VERSION": "debian-11",
-			"NVM_VERSION": "0.38.0"
+			"NVM_VERSION": "0.38.0",
+			"GIT_MKVER_VERSION": "1.2.2"
 		}
 	},		
 	"features": {
