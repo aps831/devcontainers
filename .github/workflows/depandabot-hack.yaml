@@ -1,0 +1,29 @@
+---
+name: Dependabot Hack
+on:
+  push:
+    branches:
+      - never-trigger-this-dependabot-hack-workflow
+jobs:
+  dependabot_hack:
+    name: Dependabot version checks for dockerfile installs
+    runs-on: ubuntu-latest
+    steps:
+      # update the following values in each devcontainer.json when Dependabot changes it here:      
+      # TERRAFORM_DOCS_VERSION 
+      # TFLINT_VERSION
+      # TFSEC_VERSION
+      # NVM_VERSION
+      # GIT_MKVER_VERSION
+      #
+      # Note that this hack will not detect updates for:
+      # CLOUD_SDK_VERSION
+      # PYTHON_VERSION
+      # DEBIAN_VERSION
+      #
+      - uses: terraform-docs/terraform-docs@v0.16.0
+      - uses: terraform-linters/tflint@v0.34.1
+      - uses: aquasecurity/tfsec@v1.9.1
+      - uses: nvm-sh/nvm@v0.38.0
+      - uses: idc101/git-mkver@v1.2.2
+      
