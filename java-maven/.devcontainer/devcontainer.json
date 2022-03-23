@@ -5,7 +5,8 @@
 		"args": {
 			"DEBIAN_VERSION": "debian-11",
 			"NVM_VERSION": "0.39.1",
-			"GIT_MKVER_VERSION": "1.2.2"
+			"GIT_MKVER_VERSION": "1.2.2",
+			"GITLEAKS_VERSION": "8.5.1"
 		}
 	},
 	"features": {

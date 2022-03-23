@@ -92,7 +92,13 @@ RUN curl -sSL https://terraform-docs.io/dl/v${TERRAFORM_DOCS_VERSION}/terraform-
     && rm $tmpfile \
     && curl -sSL https://github.com/aquasecurity/tfsec/releases/download/v${TFSEC_VERSION}/tfsec-linux-amd64 -o tfsec \
     && chmod +x tfsec \
-    && mv tfsec /usr/local/bin/tfsec        
+    && mv tfsec /usr/local/bin/tfsec     
+
+# Gitleaks
+ARG GITLEAKS_VERSION
+RUN curl -sSL https://github.com/zricethezav/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz | tar xvz \
+    && chmod +x gitleaks \
+    && mv gitleaks /usr/local/bin       
 
 # Install
 RUN su vscode -c "umask 0002 && . $SDKMAN_DIR/bin/sdkman-init.sh && sdk install java 2>&1 && sdk install maven 2>&1"    

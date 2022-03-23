@@ -63,5 +63,12 @@ RUN curl -sSL https://terraform-docs.io/dl/v${TERRAFORM_DOCS_VERSION}/terraform-
     && chmod +x tfsec \
     && mv tfsec /usr/local/bin/tfsec              
 
+# Gitleaks
+ARG GITLEAKS_VERSION
+RUN curl -sSL https://github.com/zricethezav/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz | tar xvz \
+    && chmod +x gitleaks \
+    && mv gitleaks /usr/local/bin
+
 RUN su vscode -c "pip install crcmod semgrep pre-commit 2>&1"
+
 USER vscode 

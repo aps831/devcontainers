@@ -59,6 +59,12 @@ ARG GIT_MKVER_VERSION
 RUN curl -L https://github.com/idc101/git-mkver/releases/download/v${GIT_MKVER_VERSION}/git-mkver-linux-amd64-${GIT_MKVER_VERSION}.tar.gz | tar xvz \
     && mv git-mkver /usr/local/bin
 
+# Gitleaks
+ARG GITLEAKS_VERSION
+RUN curl -sSL https://github.com/zricethezav/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz | tar xvz \
+    && chmod +x gitleaks \
+    && mv gitleaks /usr/local/bin    
+
 # Install
 RUN su vscode -c "umask 0002 && . $SDKMAN_DIR/bin/sdkman-init.sh && sdk install java 2>&1 && sdk install maven 2>&1"    
 RUN su vscode -c "umask 0002 && . $NVM_DIR/nvm.sh && nvm install lts/* 2>&1"

@@ -56,6 +56,12 @@ RUN wget -q "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -O "awscl
     && unzip awscliv2.zip \
     && ./aws/install
 
+# Gitleaks
+ARG GITLEAKS_VERSION
+RUN curl -sSL https://github.com/zricethezav/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz | tar xvz \
+    && chmod +x gitleaks \
+    && mv gitleaks /usr/local/bin
+
 RUN su vscode -c "pip install semgrep pre-commit 2>&1"
 
 USER vscode    
