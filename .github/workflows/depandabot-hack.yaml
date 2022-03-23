@@ -15,6 +15,7 @@ jobs:
       # TFSEC_VERSION
       # NVM_VERSION
       # GIT_MKVER_VERSION
+      # GITLEAKS_VERSION
       #
       # Note that this hack will not detect updates for:
       # CLOUD_SDK_VERSION
@@ -26,4 +27,5 @@ jobs:
       - uses: aquasecurity/tfsec@v1.11.0
       - uses: nvm-sh/nvm@v0.39.1
       - uses: idc101/git-mkver@v1.2.2
+      - uses: zricethezav/gitleaks@8.5.1
       
