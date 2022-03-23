@@ -17,11 +17,10 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: '16'
-          cache: 'npm'
-          
+
       - run: |
           set -e
-          
+
           FOLDER_WITH_DOT_DEVCONTAINER=${{ inputs.devcontainername }}
           IMAGE_NAME="devcontainers/${{ inputs.devcontainername }}"
           IMAGE_REPOSITORY="$(echo "ghcr.io/${{ github.repository_owner }}/${IMAGE_NAME}:latest" | tr '[:upper:]' '[:lower:]')"
