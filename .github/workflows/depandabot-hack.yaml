@@ -27,5 +27,5 @@ jobs:
       - uses: aquasecurity/tfsec@v1.11.0
       - uses: nvm-sh/nvm@v0.39.1
       - uses: idc101/git-mkver@v1.2.2
-      - uses: zricethezav/gitleaks@8.5.1
+      - uses: zricethezav/gitleaks@v8.5.2
       
