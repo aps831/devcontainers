@@ -7,7 +7,7 @@ on:
     branches:
       - 'master'
     paths:
-      - 'ansibe/**'
+      - 'ansible/**'
       - 'base/**'
 permissions:
   contents: read
