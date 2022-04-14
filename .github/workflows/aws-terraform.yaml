@@ -1,13 +1,14 @@
 name: Generate Aws Terraform Dev Container Image
 on:
-  workflow_dispatch:  
+  workflow_dispatch:
   schedule:
     - cron: '0 0 20 * *'
   push:
     branches:
       - 'master'
     paths:
-      - 'aws-terraform/**'    
+      - 'aws-terraform/**'
+      - 'base/**'
 permissions:
   contents: read
   packages: write

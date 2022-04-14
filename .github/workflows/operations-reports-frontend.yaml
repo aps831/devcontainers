@@ -1,13 +1,14 @@
 name: Generate Operations Reports Frontend Dev Container Image
 on:
-  workflow_dispatch:  
+  workflow_dispatch:
   schedule:
     - cron: '0 0 20 * *'
   push:
     branches:
       - 'master'
     paths:
-      - 'operations-reports-frontend/**'  
+      - 'operations-reports-frontend/**'
+      - 'base/**'
 permissions:
   contents: read
   packages: write

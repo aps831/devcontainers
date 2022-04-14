@@ -1,6 +1,6 @@
 name: Generate Operations Reports Backend Dev Container Image
 on:
-  workflow_dispatch:  
+  workflow_dispatch:
   schedule:
     - cron: '0 0 20 * *'
   push:
@@ -8,6 +8,7 @@ on:
       - 'master'
     paths:
       - 'operations-reports-backend/**'
+      - 'base/**'
 permissions:
   contents: read
   packages: write

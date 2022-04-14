@@ -1,13 +1,14 @@
 name: Generate Java Maven Dev Container Image
 on:
-  workflow_dispatch:  
+  workflow_dispatch:
   schedule:
     - cron: '0 0 20 * *'
   push:
     branches:
       - 'master'
     paths:
-      - 'java-maven/**'      
+      - 'java-maven/**'
+      - 'base/**'
 permissions:
   contents: read
   packages: write

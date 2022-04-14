@@ -1,13 +1,14 @@
 name: Generate Ansible Dev Container Image
 on:
-  workflow_dispatch:  
+  workflow_dispatch:
   schedule:
     - cron: '0 0 20 * *'
   push:
     branches:
       - 'master'
     paths:
-      - 'ansibe/**'  
+      - 'ansibe/**'
+      - 'base/**'
 permissions:
   contents: read
   packages: write
