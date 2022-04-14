@@ -17,14 +17,14 @@ ARG NODE_VERSION
 RUN curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor >> /usr/share/keyrings/nodesource.gpg \
     && gpg --no-default-keyring --keyring /usr/share/keyrings/nodesource.gpg --list-keys \
     && echo "deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/$NODE_VERSION $(lsb_release -sc) main" > /etc/apt/sources.list.d/nodesource.list \
-    && echo "deb-src [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/$NODE_VERSION $(lsb_release -sc) main" >> tee -a /etc/apt/sources.list.d/nodesource.list \
+    && echo "deb-src [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/$NODE_VERSION $(lsb_release -sc) main" >> /etc/apt/sources.list.d/nodesource.list \
     && apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends nodejs
 
 # Trivy
 RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add - \
-    && echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list \
+    && echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main > /etc/apt/sources.list.d/trivy.list \
     && apt-get update \
     && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends trivy
