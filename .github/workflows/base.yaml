@@ -1,0 +1,51 @@
+name: Generate Base Dev Container Image
+on:
+  workflow_dispatch:
+  # Runs the day before other scheduled tasks
+  schedule:
+    - cron: '0 0 19 * *'
+  push:
+    branches:
+      - 'master'
+    paths:
+      - 'base/**'
+env:
+  DEBIAN_VERSION: "debian-11"
+  GITLEAKS_VERSION: "8.5.1"
+  GIT_MKVER_VERSION: "1.2.2"
+  NODE_VERSION: "node_16.x"
+permissions:
+  contents: read
+  packages: write
+jobs:
+  devcontainer:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - run: |
+          set -e
+
+          IMAGE_REPOSITORY="ghcr.io/${{ github.repository_owner }}/devcontainers/base:latest"
+
+          # Enable buildkit, set output to plain text for logging
+          export DOCKER_BUILDKIT=1
+          export BUILDKIT_PROGRESS=plain
+
+          # Do the build - update
+          docker build --build-arg DEBIAN_VERSION=$DEBIAN_VERSION \
+                       --build-arg GITLEAKS_VERSION=$GITLEAKS_VERSION \
+                       --build-arg GIT_MKVER_VERSION=$GIT_MKVER_VERSION \
+                       --build-arg NODE_VERSION=$NODE_VERSION \
+                       --build-arg DEBIAN_DISTRO=$DEBIAN_DISTRO \
+                       --progress=plain \
+                       --tag $IMAGE_REPOSITORY \
+                       .devcontainer
+
+          # Push image to GitHub Container Registry
+          echo "${{ github.token }}" | docker login ghcr.io -u "${{ github.actor }}" --password-stdin
+          docker push "${IMAGE_REPOSITORY}"

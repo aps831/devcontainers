@@ -1,12 +1,10 @@
 {
-	"name": "operations-reports-backend",
+	"name": "java-maven",
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
-			"TERRAFORM_DOCS_VERSION": "0.16.0",
-			"TFLINT_VERSION": "0.34.1",
-			"TFSEC_VERSION": "1.11.0"
-		}
+            "NVM_VERSION": "0.39.1",
+        }
 	},
 	"features": {
 		"github-cli": "latest",

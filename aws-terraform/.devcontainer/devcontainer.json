@@ -3,14 +3,12 @@
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
-			"DEBIAN_VERSION": "debian-11",
 			"TERRAFORM_DOCS_VERSION": "0.16.0",
 			"TFLINT_VERSION": "0.34.1",
-			"TFSEC_VERSION": "1.11.0",
-			"GITLEAKS_VERSION": "8.5.1"
+			"TFSEC_VERSION": "1.11.0"
 		}
-	},	
+	},
 	"features": {
 		"github-cli": "latest"
-	}	
+	}
 }

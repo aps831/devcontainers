@@ -9,8 +9,8 @@ jobs:
     name: Dependabot version checks for dockerfile installs
     runs-on: ubuntu-latest
     steps:
-      # update the following values in each devcontainer.json when Dependabot changes it here:      
-      # TERRAFORM_DOCS_VERSION 
+      # update the following values in each devcontainer.json when Dependabot changes it here:
+      # TERRAFORM_DOCS_VERSION
       # TFLINT_VERSION
       # TFSEC_VERSION
       # NVM_VERSION
@@ -21,6 +21,7 @@ jobs:
       # CLOUD_SDK_VERSION
       # PYTHON_VERSION
       # DEBIAN_VERSION
+      # NODE_VERSION
       #
       - uses: terraform-docs/terraform-docs@v0.16.0
       - uses: terraform-linters/tflint@v0.34.1
@@ -28,4 +29,3 @@ jobs:
       - uses: nvm-sh/nvm@v0.39.1
       - uses: idc101/git-mkver@v1.2.2
       - uses: zricethezav/gitleaks@8.5.1
-      

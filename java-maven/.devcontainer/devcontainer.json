@@ -2,12 +2,7 @@
 	"name": "java-maven",
 	"build": {
 		"dockerfile": "Dockerfile",
-		"args": {
-			"DEBIAN_VERSION": "debian-11",
-			"NVM_VERSION": "0.39.1",
-			"GIT_MKVER_VERSION": "1.2.2",
-			"GITLEAKS_VERSION": "8.5.1"
-		}
+		"args": {}
 	},
 	"features": {
 		"github-cli": "latest",
@@ -15,5 +10,5 @@
 			"version": "latest",
 			"moby": true
 		}
-	}	
+	}
 }

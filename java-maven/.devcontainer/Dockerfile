@@ -1,30 +1,14 @@
-ARG DEBIAN_VERSION=""
-FROM mcr.microsoft.com/vscode/devcontainers/base:${DEBIAN_VERSION}
+FROM ghcr.io/aps831/devcontainers/base:latest
 
 ENV USERNAME="vscode"
 
 COPY --chown=vscode:vscode settings.xml "/home/${USERNAME}/.m2/settings.xml"
-COPY install_nvm.sh .
 
 # Packages
 RUN apt-get update \
     && apt-get -y install --no-install-recommends \
         fontconfig \
-        curl \
-        wget \
-        apt-transport-https \
-        gnupg \
-        lsb-release \        
-        python3-distutils \
-        python3-pip \
         gettext-base
-
-# Trivy
-RUN wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | sudo apt-key add - \
-    && echo deb https://aquasecurity.github.io/trivy-repo/deb $(lsb_release -sc) main | sudo tee -a /etc/apt/sources.list.d/trivy.list \
-    && apt-get update \
-    && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends trivy        
 
 # Install sdkman
 ENV SDKMAN_DIR="/usr/local/sdkman"
@@ -39,36 +23,7 @@ RUN groupadd -r sdkman \
     && echo ". $SDKMAN_DIR/bin/sdkman-init.sh" >> /etc/bash.bashrc \
     && sed -i '/sdkman_auto_env=false/c sdkman_auto_env=true' $SDKMAN_DIR/etc/config
 
-# Install nvm
-ARG NVM_VERSION
-ENV NVM_DIR="/usr/local/share/nvm"
-RUN groupadd -r nvm \
-   && usermod -a -G nvm ${USERNAME} \
-   && umask 0002 \
-   && mkdir -p ${NVM_DIR} \
-   && chown :nvm ${NVM_DIR} \
-   && chmod g+s ${NVM_DIR} \
-   && su ${USERNAME} -c ". install_nvm.sh" \
-   && echo "export NVM_DIR=\"$NVM_DIR\"" >> /etc/bash.bashrc \
-   && echo "export PATH=$NVM_DIR/current/bin:\$PATH" >> /etc/bash.bashrc \
-   && echo "[ -s $NVM_DIR/nvm.sh ] && . $NVM_DIR/nvm.sh" >> /etc/bash.bashrc \
-   && echo "[ -s $NVM_DIR/bash_completion ] && . $NVM_DIR/bash_completion" >> /etc/bash.bashrc
-
-# Git Mkver
-ARG GIT_MKVER_VERSION
-RUN curl -L https://github.com/idc101/git-mkver/releases/download/v${GIT_MKVER_VERSION}/git-mkver-linux-amd64-${GIT_MKVER_VERSION}.tar.gz | tar xvz \
-    && mv git-mkver /usr/local/bin
-
-# Gitleaks
-ARG GITLEAKS_VERSION
-RUN curl -sSL https://github.com/zricethezav/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz | tar xvz \
-    && chmod +x gitleaks \
-    && mv gitleaks /usr/local/bin    
-
 # Install
-RUN su vscode -c "umask 0002 && . $SDKMAN_DIR/bin/sdkman-init.sh && sdk install java 2>&1 && sdk install maven 2>&1"    
-RUN su vscode -c "umask 0002 && . $NVM_DIR/nvm.sh && nvm install lts/* 2>&1"
-# RUN su vscode -c "umask 0002 && . $NVM_DIR/nvm.sh && npm install -g <package> 2>&1"
-RUN su vscode -c "python3 -m pip install setuptools && python3 -m pip install semgrep pre-commit 2>&1"
+RUN su vscode -c "umask 0002 && . $SDKMAN_DIR/bin/sdkman-init.sh && sdk install java 2>&1 && sdk install maven 2>&1"
 
 USER vscode

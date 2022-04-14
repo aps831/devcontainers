@@ -6,6 +6,7 @@ This project defines devcontainer images for:
 * aws-terraform;
 * gcp-terraform;
 * java-maven;
+* node;
 * operations-reports-backend;
 * operations-reports-frontend.
 
