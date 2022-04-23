@@ -1,7 +1,7 @@
 #! /bin/bash
 IMAGE_NAME="ghcr.io/aps831/devcontainers/base:latest"
 DEBIAN_VERSION="debian-11"
-GITLEAKS_VERSION="8.5.1"
+GITLEAKS_VERSION="8.8.2"
 GIT_MKVER_VERSION="1.2.2"
 NODE_VERSION="node_16.x"
 DELTA_VERSION="0.12.1"
