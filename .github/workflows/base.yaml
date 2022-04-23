@@ -43,7 +43,7 @@ jobs:
                        --build-arg GITLEAKS_VERSION=$GITLEAKS_VERSION \
                        --build-arg GIT_MKVER_VERSION=$GIT_MKVER_VERSION \
                        --build-arg NODE_VERSION=$NODE_VERSION \
-                       --build-arg DEBIAN_DISTRO=$DEBIAN_DISTRO \
+                       --build-arg DELTA_VERSION=$DELTA_VERSION \
                        --progress=plain \
                        --tag $IMAGE_REPOSITORY \
                        base/.devcontainer
