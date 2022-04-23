@@ -1,0 +1,12 @@
+{
+	"name": "python",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+	"features": {
+		"docker-in-docker": {
+			"version": "latest",
+			"moby": true
+		}
+	}
+}

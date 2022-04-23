@@ -1,0 +1,22 @@
+name: Generate Python Dev Container Image
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 0 20 * *'
+  push:
+    branches:
+      - 'master'
+    paths:
+      - 'python/**'
+  workflow_run:
+    workflows: [Generate Base Dev Container Image]
+    types:
+      - completed
+permissions:
+  contents: read
+  packages: write
+jobs:
+  devcontainer:
+    uses: ./.github/workflows/generate-devcontainer-image.yaml
+    with:
+      devcontainername: "python"
