@@ -16,6 +16,7 @@ jobs:
       # NVM_VERSION
       # GIT_MKVER_VERSION
       # GITLEAKS_VERSION
+      # DELTA_VERSION
       #
       # Note that this hack will not detect updates for:
       # CLOUD_SDK_VERSION
@@ -29,3 +30,4 @@ jobs:
       - uses: nvm-sh/nvm@v0.39.1
       - uses: idc101/git-mkver@v1.2.2
       - uses: zricethezav/gitleaks@8.5.1
+      - uses: dandavison/delta@0.12.1

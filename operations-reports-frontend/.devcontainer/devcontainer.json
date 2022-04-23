@@ -8,8 +8,5 @@
 			"TFLINT_VERSION": "0.34.1",
 			"TFSEC_VERSION": "1.11.0"
 		}
-	},
-	"features": {
-		"github-cli": "latest"
 	}
 }

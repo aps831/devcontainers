@@ -9,7 +9,6 @@
 		}
 	},
 	"features": {
-		"github-cli": "latest",
 		"docker-in-docker": {
 			"version": "latest",
 			"moby": true

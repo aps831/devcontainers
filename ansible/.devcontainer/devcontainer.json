@@ -4,9 +4,6 @@
 		"dockerfile": "Dockerfile",
 		"args": {}
 	},
-	"features": {
-		"github-cli": "latest"
-	},
 	"settings": {
 		"files.associations": {
 			"**/*.yaml": "ansible",
