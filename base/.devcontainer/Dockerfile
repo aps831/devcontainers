@@ -56,3 +56,10 @@ RUN pip install --no-warn-script-location semgrep pre-commit virtualenv
 
 # Commitizen
 RUN npm -g install commitizen cz-conventional-changelog
+
+# Asdf
+ARG ASDF_VERSION
+RUN git clone https://github.com/asdf-vm/asdf.git /home/vscode/.asdf --branch v${ASDF_VERSION} \
+    && chown vscode:vscode -R /home/vscode/.asdf \
+    && echo ". /home/vscode/.asdf/asdf.sh" >> /etc/bash.bashrc \
+    && cat /home/vscode/.asdf/completions/asdf.bash > /etc/bash_completion.d/asdf.bash
