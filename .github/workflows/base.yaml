@@ -45,6 +45,7 @@ jobs:
                        --build-arg GIT_MKVER_VERSION=$GIT_MKVER_VERSION \
                        --build-arg NODE_VERSION=$NODE_VERSION \
                        --build-arg DELTA_VERSION=$DELTA_VERSION \
+                       --build-arg ASDF_VERION=$ASDF_VERION \
                        --progress=plain \
                        --tag $IMAGE_REPOSITORY \
                        base/.devcontainer
