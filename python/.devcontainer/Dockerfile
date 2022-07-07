@@ -22,6 +22,9 @@ RUN apt-get update && \
     liblzma-dev\
     python3-venv
 
+# Install globally before Python environments
+RUN pip install --no-cache-dir safety
+
 RUN mkdir -p /home/vscode/.pyenv\
     && git clone "https://github.com/pyenv/pyenv.git" /home/vscode/.pyenv\
     && echo "system" > /home/vscode/.pyenv/version\
