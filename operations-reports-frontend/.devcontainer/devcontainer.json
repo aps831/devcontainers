@@ -1,12 +1,12 @@
 {
-	"name": "operations-reports-frontend",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-			"NVM_VERSION": "0.39.1",
-			"TERRAFORM_DOCS_VERSION": "0.16.0",
-			"TFLINT_VERSION": "0.35.0",
-			"TFSEC_VERSION": "1.18.0"
-		}
-	}
+    "name": "operations-reports-frontend",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "NVM_VERSION": "0.39.1",
+            "TERRAFORM_DOCS_VERSION": "0.16.0",
+            "TFLINT_VERSION": "0.41.0",
+            "TFSEC_VERSION": "1.28.0"
+        }
+    }
 }
