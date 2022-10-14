@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     if: (github.actor != 'dependabot[bot]')
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3.1.0
 
       - name: Trunk Check
-        uses: trunk-io/trunk-action@v1.0.2
+        uses: trunk-io/trunk-action@v1.0.4
