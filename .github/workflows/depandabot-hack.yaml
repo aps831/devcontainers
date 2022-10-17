@@ -34,4 +34,4 @@ jobs:
       - uses: zricethezav/gitleaks@8.15.0
       - uses: dandavison/delta@0.14.0
       - uses: asdf-vm/asdf@0.10.0
-      - uses: sonatype-nexus-community/nancy@1.0.36
+      - uses: sonatype-nexus-community/nancy@v1.0.41
