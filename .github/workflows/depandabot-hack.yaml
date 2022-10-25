@@ -27,7 +27,7 @@ jobs:
       # NODE_VERSION
       #
       - uses: terraform-docs/terraform-docs@v0.16.0
-      - uses: terraform-linters/tflint@v0.41.0
+      - uses: terraform-linters/tflint@v0.42.1
       - uses: aquasecurity/tfsec@v1.28.0
       - uses: nvm-sh/nvm@v0.39.1
       - uses: idc101/git-mkver@v1.2.2
