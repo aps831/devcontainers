@@ -1,15 +1,16 @@
 {
-	"name": "node",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {
-            "NVM_VERSION": "0.39.1",
+    "name": "node",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {
+            "NVM_VERSION": "0.39.1"
         }
-	},
-	"features": {
-		"docker-in-docker": {
-			"version": "latest",
-			"moby": true
-		}
-	}
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:1": {
+            "version": "latest",
+            "moby": true
+        },
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    }
 }

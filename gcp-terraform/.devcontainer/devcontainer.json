@@ -8,5 +8,8 @@
             "TFLINT_VERSION": "0.41.0",
             "TFSEC_VERSION": "1.28.0"
         }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {}
     }
 }

@@ -14,14 +14,6 @@ RUN apt-get update \
         python3-distutils \
         fzf
 
-# Github
-RUN wget -qO - https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo apt-key add - \
-    && echo deb [arch=amd64] https://cli.github.com/packages stable main > /etc/apt/sources.list.d/githubcli.list \
-    && apt-get update \
-    && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends gh \
-    && gh completion -s bash > /etc/bash_completion.d/github-completion
-
 # Node
 ARG NODE_VERSION
 RUN curl -fsSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --dearmor >> /usr/share/keyrings/nodesource.gpg \

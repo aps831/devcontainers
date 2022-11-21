@@ -1,13 +1,14 @@
 {
-	"name": "java-maven",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {}
-	},
-	"features": {
-		"docker-in-docker": {
-			"version": "latest",
-			"moby": true
-		}
-	}
+    "name": "java-maven",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {}
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:1": {
+            "version": "latest",
+            "moby": true
+        },
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    }
 }

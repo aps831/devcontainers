@@ -1,13 +1,16 @@
 {
-	"name": "Ansible",
-	"build": {
-		"dockerfile": "Dockerfile",
-		"args": {}
-	},
-	"settings": {
-		"files.associations": {
-			"**/*.yaml": "ansible",
-			"**/*.yml": "ansible"
-		}
-	}
+    "name": "Ansible",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "args": {}
+    },
+    "settings": {
+        "files.associations": {
+            "**/*.yaml": "ansible",
+            "**/*.yml": "ansible"
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/github-cli:1": {}
+    }
 }
