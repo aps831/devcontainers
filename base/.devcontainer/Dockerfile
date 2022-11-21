@@ -54,7 +54,7 @@ RUN wget -q -O - https://raw.githubusercontent.com/git/git/master/contrib/comple
 # Python and NPM tools
 # hadolint ignore=DL3016
 RUN pip install --no-cache-dir --no-warn-script-location semgrep pre-commit virtualenv \
-    && npm -g install commitizen cz-conventional-changelog @trunkio/launcher
+    && npm -g install commitizen cz-conventional-changelog @trunkio/launcher @go-task/cli
 
 # Asdf
 ARG ASDF_VERSION
