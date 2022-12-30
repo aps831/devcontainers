@@ -1,16 +1,13 @@
 {
     "name": "node",
-    "build": {
-        "dockerfile": "Dockerfile",
-        "args": {
-            "NVM_VERSION": "0.39.1"
-        }
-    },
+    "image": "ghcr.io/aps831/devcontainers/base:latest",
     "features": {
         "ghcr.io/devcontainers/features/docker-in-docker:1": {
             "version": "latest",
             "moby": true
         },
-        "ghcr.io/devcontainers/features/github-cli:1": {}
+        "ghcr.io/devcontainers-contrib/features/asdf-package:1": {
+            "plugin": "nodejs"
+        }
     }
 }
