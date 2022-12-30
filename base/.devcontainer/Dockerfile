@@ -7,9 +7,11 @@ RUN apt-get update \
         bash-completion \
         python3-pip \
         python3-distutils \
+        python3-dev \
         fzf \
         fontconfig \
         gettext-base \
+        gcc \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/*
 
@@ -40,7 +42,7 @@ RUN wget -q -O - https://raw.githubusercontent.com/git/git/master/contrib/comple
 
 # Python tools
 # hadolint ignore=DL3016
-RUN pip install --no-cache-dir --no-warn-script-location semgrep commitizen
+RUN pip install --no-cache-dir --no-warn-script-location semgrep commitizen crcmod
 
 # NPM tools
 # hadolint ignore=DL3059,DL3016

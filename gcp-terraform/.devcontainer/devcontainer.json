@@ -1,15 +1,12 @@
 {
     "name": "Aws Terraform",
-    "build": {
-        "dockerfile": "Dockerfile",
-        "args": {
-            "CLOUD_SDK_VERSION": "371.0.0",
-            "TERRAFORM_DOCS_VERSION": "0.16.0",
-            "TFLINT_VERSION": "0.41.0",
-            "TFSEC_VERSION": "1.28.0"
-        }
-    },
+    "image": "ghcr.io/aps831/devcontainers/base:latest",
     "features": {
-        "ghcr.io/devcontainers/features/github-cli:1": {}
+        "ghcr.io/devcontainers/features/terraform:1": {},
+        "ghcr.io/devcontainers-contrib/features/terraform-asdf:2": {},
+        "ghcr.io/devcontainers-contrib/features/terraform-ls-asdf:2": {},
+        "ghcr.io/dhoeric/features/terraform-docs:1": {},
+        "ghcr.io/dhoeric/features/tfsec:1": {},
+        "ghcr.io/dhoeric/features/google-cloud-cli:1": {}
     }
 }
