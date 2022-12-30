@@ -9,6 +9,6 @@
             "version": "latest",
             "moby": true
         },
-        "ghcr.io/devcontainers/features/github-cli:1": {}
+        "ghcr.io/devcontainers/features/java:1": {}
     }
 }
