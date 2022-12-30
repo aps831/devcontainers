@@ -1,18 +1,19 @@
 {
     "name": "operations-reports-backend",
     "build": {
-        "dockerfile": "Dockerfile",
-        "args": {
-            "TERRAFORM_DOCS_VERSION": "0.16.0",
-            "TFLINT_VERSION": "0.41.0",
-            "TFSEC_VERSION": "1.28.0"
-        }
+        "dockerfile": "Dockerfile"
     },
     "features": {
         "ghcr.io/devcontainers/features/docker-in-docker:1": {
             "version": "latest",
             "moby": true
         },
-        "ghcr.io/devcontainers/features/github-cli:1": {}
+        "ghcr.io/devcontainers/features/java:1": {},
+        "ghcr.io/devcontainers/features/terraform:1": {},
+        "ghcr.io/devcontainers-contrib/features/terraform-asdf:2": {},
+        "ghcr.io/devcontainers-contrib/features/terraform-ls-asdf:2": {},
+        "ghcr.io/dhoeric/features/terraform-docs:1": {},
+        "ghcr.io/dhoeric/features/tfsec:1": {},
+        "ghcr.io/devcontainers/features/aws-cli:1": {}
     }
 }
