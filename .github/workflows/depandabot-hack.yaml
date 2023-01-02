@@ -21,5 +21,5 @@ jobs:
       #
       - uses: idc101/git-mkver@v1.2.2
       - uses: zricethezav/gitleaks@8.15.0
-      - uses: dandavison/delta@0.14.0
+      - uses: dandavison/delta@0.15.1
       - uses: sonatype-nexus-community/nancy@1.0.36
