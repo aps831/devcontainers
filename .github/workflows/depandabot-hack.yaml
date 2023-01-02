@@ -20,6 +20,6 @@ jobs:
       # NODE_VERSION
       #
       - uses: idc101/git-mkver@v1.2.2
-      - uses: zricethezav/gitleaks@8.15.0
+      - uses: zricethezav/gitleaks@v8.15.2
       - uses: dandavison/delta@0.14.0
       - uses: sonatype-nexus-community/nancy@1.0.36
