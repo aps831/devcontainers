@@ -28,22 +28,5 @@ RUN wget -q -O - https://deb.nodesource.com/gpgkey/nodesource.gpg.key | gpg --de
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Git tools
-ARG DELTA_VERSION
-ARG GITLEAKS_VERSION
-ARG GIT_MKVER_VERSION
-RUN wget -q -O - https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > /etc/bash_completion.d/git-completion \
-    && wget -q -O delta.deb https://github.com/dandavison/delta/releases/download/${DELTA_VERSION}/git-delta_${DELTA_VERSION}_amd64.deb && dpkg -i delta.deb \
-    && wget -q -O - https://github.com/zricethezav/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz | tar xvz \
-    && chmod +x gitleaks \
-    && mv gitleaks /usr/local/bin \
-    && wget -q -O - https://github.com/idc101/git-mkver/releases/download/v${GIT_MKVER_VERSION}/git-mkver-linux-amd64-${GIT_MKVER_VERSION}.tar.gz | tar xvz \
-    && mv git-mkver /usr/local/bin
-
-# Python tools
-# hadolint ignore=DL3016
-RUN pip install --no-cache-dir --no-warn-script-location semgrep commitizen crcmod
-
-# NPM tools
-# hadolint ignore=DL3059,DL3016
-RUN npm -g install @trunkio/launcher
+# Git completion
+RUN wget -q -O - https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > /etc/bash_completion.d/git-completion

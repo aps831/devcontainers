@@ -1,8 +1,6 @@
 {
     "name": "operations-reports-frontend",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
+    "image": "ghcr.io/aps831/devcontainers/base:latest",
     "features": {
         "ghcr.io/devcontainers-contrib/features/asdf-package:1": {
             "plugin": "nodejs"
@@ -13,6 +11,7 @@
         },
         "ghcr.io/devcontainers-contrib/features/terraform-asdf:2": {},
         "ghcr.io/devcontainers-contrib/features/terraform-ls-asdf:2": {},
-        "ghcr.io/devcontainers/features/aws-cli:1": {}
+        "ghcr.io/devcontainers/features/aws-cli:1": {},
+        "ghcr.io/aps831/devcontainers-features/cypress-deps:1": {}
     }
 }
