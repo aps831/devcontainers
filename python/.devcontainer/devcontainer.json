@@ -3,5 +3,13 @@
     "build": {
         "dockerfile": "Dockerfile"
     },
-    "features": {}
+    "features": {
+        "ghcr.io/devcontainers-contrib/features/asdf-package:1": {
+            "plugin": "python"
+        },
+        "ghcr.io/devcontainers-contrib/features/poetry:2.0.1": {},
+        "ghcr.io/devcontainers-contrib/features/pipx-package:1": {
+            "package": "safety"
+        }
+    }
 }
