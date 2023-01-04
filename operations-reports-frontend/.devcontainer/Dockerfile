@@ -1,5 +1,4 @@
 FROM ghcr.io/aps831/devcontainers/base:latest
-ENV USERNAME="vscode"
 RUN apt-get update \
     && apt-get -y install --no-install-recommends \
       libgtk2.0-0 \
