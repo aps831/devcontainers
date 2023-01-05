@@ -7,7 +7,7 @@ RUN apt-get update \
         bash-completion \
         fzf \
         fontconfig \
-        gettext-base
+        gettext-base \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/*
 
