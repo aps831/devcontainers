@@ -22,6 +22,8 @@ runtimes:
     - python@3.10.3
 actions:
   enabled:
+    - commit-branch
+    - commitizen
     - trunk-announce
     - trunk-check-pre-push
     - trunk-fmt-pre-commit
