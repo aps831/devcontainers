@@ -1,0 +1,4 @@
+semgrep latest
+trivy latest
+task latest
+
