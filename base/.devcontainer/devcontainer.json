@@ -20,7 +20,10 @@
             "version": "0.12.1"
         },
         "ghcr.io/aps831/devcontainers-features/gitleaks:1": {},
-        "ghcr.io/aps831/devcontainers-features/gitmkver:1": {}
+        "ghcr.io/aps831/devcontainers-features/gitmkver:1": {},
+        "ghcr.io/aps831/devcontainers-features/semgrep-asdf:1": {},
+        "ghcr.io/aps831/devcontainers-features/task-asdf:1": {},
+        "ghcr.io/aps831/devcontainers-features/trivy-asdf:1": {}
     },
     "remoteEnv": {
         "DEVCONTAINERS": "true"
