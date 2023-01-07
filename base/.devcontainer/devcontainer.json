@@ -21,5 +21,8 @@
         },
         "ghcr.io/aps831/devcontainers-features/gitleaks:1": {},
         "ghcr.io/aps831/devcontainers-features/gitmkver:1": {}
+    },
+    "remoteEnv": {
+        "DEVCONTAINERS": "true"
     }
 }
