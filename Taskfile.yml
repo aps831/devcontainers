@@ -1,0 +1,22 @@
+---
+version: "3"
+tasks:
+  # Static Analysis
+  check:
+    summary: Run Trunk check
+    desc: Run Trunk check
+    cmds:
+      - trunk check
+  static:
+    summary: Run static analysis check
+    desc: Run static analysis check
+    cmds:
+      - semgrep --config=auto .
+  security:
+    summary: Run security check
+    desc: Run security check
+    cmds:
+      - trivy config .
+      - trivy fs .
+      - semgrep --config=p/security-audit .
+      - semgrep --config=p/secrets .
