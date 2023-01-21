@@ -5,6 +5,6 @@ updates:
     schedule:
       interval: "daily"
     assignees:
-      - "aps831" 
+      - "aps831"
     labels:
-      - "enhancement"       
+      - "github_actions"
