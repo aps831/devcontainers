@@ -6,8 +6,6 @@
     "features": {
         "ghcr.io/aps831/devcontainers-features/python-asdf:1": {},
         "ghcr.io/aps831/devcontainers-features/poetry-asdf:1": {},
-        "ghcr.io/devcontainers-contrib/features/pipx-package:1": {
-            "package": "safety"
-        }
+        "ghcr.io/aps831/devcontainers-features/safety:1": {}
     }
 }
