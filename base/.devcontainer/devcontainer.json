@@ -13,9 +13,6 @@
         "ghcr.io/eitsupi/devcontainer-features/go-task:1": {},
         "ghcr.io/devcontainers/features/common-utils:2": {},
         "ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {},
-        "ghcr.io/aps831/devcontainers-features/semgrep:1": {},
-        "ghcr.io/aps831/devcontainers-features/commitizen:1": {},
-        "ghcr.io/aps831/devcontainers-features/trunk:1": {},
         "ghcr.io/aps831/devcontainers-features/delta:1": {
             "version": "0.12.1"
         },
