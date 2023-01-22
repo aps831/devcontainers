@@ -9,7 +9,6 @@
     },
     "features": {
         "ghcr.io/devcontainers/features/github-cli:1": {},
-        "ghcr.io/dhoeric/features/trivy:1": {},
         "ghcr.io/eitsupi/devcontainer-features/go-task:1": {},
         "ghcr.io/devcontainers/features/common-utils:2": {},
         "ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {},
