@@ -4,10 +4,8 @@
         "dockerfile": "Dockerfile"
     },
     "features": {
-        "ghcr.io/devcontainers-contrib/features/asdf-package:1": {
-            "plugin": "python"
-        },
-        "ghcr.io/devcontainers-contrib/features/poetry:2.0.1": {},
+        "ghcr.io/aps831/devcontainers-features/python-asdf:1": {},
+        "ghcr.io/aps831/devcontainers-features/poetry-asdf:1": {},
         "ghcr.io/devcontainers-contrib/features/pipx-package:1": {
             "package": "safety"
         }

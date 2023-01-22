@@ -6,8 +6,6 @@
             "version": "latest",
             "moby": true
         },
-        "ghcr.io/devcontainers-contrib/features/asdf-package:1": {
-            "plugin": "nodejs"
-        }
+        "ghcr.io/aps831/devcontainers-features/nodejs-asdf:1": {}
     }
 }

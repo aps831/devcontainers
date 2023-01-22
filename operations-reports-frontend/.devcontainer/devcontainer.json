@@ -2,9 +2,7 @@
     "name": "operations-reports-frontend",
     "image": "ghcr.io/aps831/devcontainers/base:latest",
     "features": {
-        "ghcr.io/devcontainers-contrib/features/asdf-package:1": {
-            "plugin": "nodejs"
-        },
+        "ghcr.io/aps831/devcontainers-features/nodejs-asdf:1": {},
         "ghcr.io/devcontainers/features/terraform:1": {
             "installTFsec": true,
             "installTerraformDocs": true

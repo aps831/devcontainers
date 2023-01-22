@@ -4,9 +4,7 @@
         "dockerfile": "Dockerfile"
     },
     "features": {
-        "ghcr.io/devcontainers-contrib/features/asdf-package:1": {
-            "plugin": "golang"
-        },
+        "ghcr.io/aps831/devcontainers-features/golang-asdf:1": {},
         "ghcr.io/aps831/devcontainers-features/nancy:1": {}
     }
 }
