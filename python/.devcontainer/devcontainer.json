@@ -4,6 +4,9 @@
         "dockerfile": "Dockerfile"
     },
     "features": {
+        "ghcr.io/aps831/devcontainers-features/semgrep-asdf:1": {},
+        "ghcr.io/aps831/devcontainers-features/task-asdf:1": {},
+        "ghcr.io/aps831/devcontainers-features/trivy-asdf:1": {},
         "ghcr.io/aps831/devcontainers-features/python-asdf:1": {},
         "ghcr.io/aps831/devcontainers-features/poetry-asdf:1": {},
         "ghcr.io/aps831/devcontainers-features/safety:1": {}

@@ -7,6 +7,9 @@
             "installTFsec": true,
             "installTerraformDocs": true
         },
+        "ghcr.io/aps831/devcontainers-features/semgrep-asdf:1": {},
+        "ghcr.io/aps831/devcontainers-features/task-asdf:1": {},
+        "ghcr.io/aps831/devcontainers-features/trivy-asdf:1": {},
         "ghcr.io/devcontainers-contrib/features/terraform-asdf:2": {},
         "ghcr.io/devcontainers-contrib/features/terraform-ls-asdf:2": {},
         "ghcr.io/devcontainers/features/aws-cli:1": {},

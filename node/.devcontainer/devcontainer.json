@@ -6,6 +6,9 @@
             "version": "latest",
             "moby": true
         },
+        "ghcr.io/aps831/devcontainers-features/semgrep-asdf:1": {},
+        "ghcr.io/aps831/devcontainers-features/task-asdf:1": {},
+        "ghcr.io/aps831/devcontainers-features/trivy-asdf:1": {},
         "ghcr.io/aps831/devcontainers-features/nodejs-asdf:1": {}
     }
 }
