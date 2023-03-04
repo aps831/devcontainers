@@ -1,0 +1,17 @@
+name: Scorecards supply-chain security
+on:
+  workflow_dispatch:
+  branch_protection_rule:
+  schedule:
+    - cron: "30 1 * * 6"
+  push:
+    branches:
+      - "master"
+permissions: read-all
+jobs:
+  analysis:
+    permissions:
+      security-events: write
+      id-token: write
+    name: Scorecards analysis
+    uses: aps831/workflows/.github/workflows/scorecards.yaml@master
