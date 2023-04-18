@@ -1,0 +1,7 @@
+---
+name: Dependency Review
+on:
+  pull_request:
+jobs:
+  dependency-review:
+    uses: aps831/workflows/.github/workflows/dependency-review.yaml@master
