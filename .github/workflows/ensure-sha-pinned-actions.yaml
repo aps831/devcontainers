@@ -1,0 +1,10 @@
+---
+name: Ensure SHA pinned actions
+on:
+  pull_request: {}
+  push:
+    branches:
+      - "master"
+jobs:
+  harden_security:
+    uses: aps831/workflows/.github/workflows/ensure-sha-pinned-actions.yaml@master
