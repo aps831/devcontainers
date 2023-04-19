@@ -2,9 +2,11 @@ version: 0.1
 cli:
   version: 1.8.0
 lint:
+  disabled:
+    - terraform-validate
   enabled:
+    - trivy@0.38.3
     - yamllint@1.30.0
-    - trivy
     - git-diff-check
     - taplo@0.7.0
     - actionlint@1.6.24
@@ -21,9 +23,14 @@ runtimes:
     - node@18.12.1
     - python@3.10.8
 actions:
-  enabled:
-    - commit-branch
+  disabled:
     - commitizen
+  enabled:
+    - wip-check
+    - templated-output-check
+    - commitizen-prompt-conventional
+    - commitizen-tools-check
+    - commit-branch
     - trunk-announce
     - trunk-check-pre-push
     - trunk-fmt-pre-commit
