@@ -20,3 +20,44 @@ tasks:
       - trivy fs .
       - semgrep --config=p/security-audit .
       - semgrep --config=p/secrets .
+  tool-versions:upgrade:repo:
+    summary: Upgrade version in .tool-versions
+    desc: Upgrade version in .tool-versions
+    internal: true
+    silent: true
+    cmds:
+      - |
+        version=$(gh api -H "Accept: application/vnd.github+json" repos/{{ .OWNER }}/{{ .NAME }}/releases/latest | jq .tag_name -r)
+        version=${version//v}
+        sed -i "s/{{ .NAME }}.*/{{ .NAME }} $version/g" .tool-versions
+  tool-versions:upgrade:
+    summary: Upgrade versions in .tool-versions
+    desc: Upgrade versions in .tool-versions
+    cmds:
+      - task: tool-versions:upgrade:semgrep
+      - task: tool-versions:upgrade:trivy
+      - task: tool-versions:upgrade:task
+  tool-versions:upgrade:semgrep:
+    summary: Upgrade version of semgrep in .tool-versions
+    desc: Upgrade version of semgrep .tool-versions
+    cmds:
+      - task: tool-versions:upgrade:repo
+        vars:
+          OWNER: returntocorp
+          NAME: semgrep
+  tool-versions:upgrade:trivy:
+    summary: Upgrade version of trivy in .tool-versions
+    desc: Upgrade version of trivy .tool-versions
+    cmds:
+      - task: tool-versions:upgrade:repo
+        vars:
+          OWNER: aquasecurity
+          NAME: trivy
+  tool-versions:upgrade:task:
+    summary: Upgrade version of task in .tool-versions
+    desc: Upgrade version of task .tool-versions
+    cmds:
+      - task: tool-versions:upgrade:repo
+        vars:
+          OWNER: go-task
+          NAME: task
