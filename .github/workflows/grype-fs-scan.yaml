@@ -1,0 +1,10 @@
+---
+name: Grype Fs Scan
+on:
+  pull_request: {}
+  push:
+    branches:
+      - "master"
+jobs:
+  scan:
+    uses: aps831/workflows/.github/workflows/grype-fs-scan.yaml@master
