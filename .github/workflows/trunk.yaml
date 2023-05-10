@@ -2,11 +2,6 @@ name: Trunk Check
 on:
   pull_request: {}
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  trunk:
     if: (github.actor != 'dependabot[bot]')
-    steps:
-      - uses: actions/checkout@v3.1.0
-
-      - name: Trunk Check
-        uses: trunk-io/trunk-action@v1.0.4
+    uses: aps831/workflows/.github/workflows/trunk.yaml@master
