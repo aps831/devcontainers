@@ -3,5 +3,4 @@ on:
   pull_request: {}
 jobs:
   trunk:
-    if: (github.actor != 'dependabot[bot]')
     uses: aps831/workflows/.github/workflows/trunk.yaml@master
