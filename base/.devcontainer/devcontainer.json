@@ -3,7 +3,6 @@
     "build": {
         "dockerfile": "Dockerfile",
         "args": {
-            "DEBIAN_VERSION": "debian-11",
             "NODE_VERSION": "node_16.x"
         }
     },

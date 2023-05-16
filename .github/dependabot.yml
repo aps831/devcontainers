@@ -8,3 +8,11 @@ updates:
       - "aps831"
     labels:
       - "github_actions"
+  - package-ecosystem: "docker"
+    directory: "/base/.devcontainer"
+    schedule:
+      interval: "weekly"
+    assignees:
+      - "aps831"
+    labels:
+      - "dependencies"

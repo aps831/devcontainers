@@ -1,5 +1,5 @@
-ARG DEBIAN_VERSION=""
-FROM mcr.microsoft.com/vscode/devcontainers/base:${DEBIAN_VERSION}
+# debian-11
+FROM mcr.microsoft.com/vscode/devcontainers/base@sha256:547a050dcfabd12be89ec3ed62ebadfc8b0b215361ba76c4a710776ef45074de
 
 # Packages
 RUN apt-get update \
