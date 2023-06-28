@@ -1,10 +1,14 @@
 # yaml-language-server: $schema=https://json.schemastore.org/github-workflow.json
 name: Trivy Config Audit
 on:
-  workflow_dispatch:     
+  workflow_dispatch:
   schedule:
     - cron: 0 4 1 * *
   pull_request:
 jobs:
   build:
     uses: aps831/workflows/.github/workflows/trivy-config-audit.yaml@master
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read

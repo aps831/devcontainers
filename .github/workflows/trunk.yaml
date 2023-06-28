@@ -4,3 +4,7 @@ on:
 jobs:
   trunk:
     uses: aps831/workflows/.github/workflows/trunk.yaml@master
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read

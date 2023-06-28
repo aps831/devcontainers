@@ -7,11 +7,13 @@ on:
   push:
     branches:
       - "master"
-permissions: read-all
 jobs:
   analysis:
     permissions:
       security-events: write
       id-token: write
+      contents: read
+      issues: read
+      pull-requests: read
     name: Scorecards analysis
     uses: aps831/workflows/.github/workflows/scorecards.yaml@master

@@ -8,3 +8,7 @@ on:
 jobs:
   harden_security:
     uses: aps831/workflows/.github/workflows/ensure-sha-pinned-actions.yaml@master
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
