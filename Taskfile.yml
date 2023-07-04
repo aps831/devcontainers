@@ -34,17 +34,8 @@ tasks:
     summary: Upgrade versions in .tool-versions
     desc: Upgrade versions in .tool-versions
     cmds:
-      - task: tool-versions:upgrade:semgrep
       - task: tool-versions:upgrade:trivy
       - task: tool-versions:upgrade:task
-  tool-versions:upgrade:semgrep:
-    summary: Upgrade version of semgrep in .tool-versions
-    desc: Upgrade version of semgrep .tool-versions
-    cmds:
-      - task: tool-versions:upgrade:repo
-        vars:
-          OWNER: returntocorp
-          NAME: semgrep
   tool-versions:upgrade:trivy:
     summary: Upgrade version of trivy in .tool-versions
     desc: Upgrade version of trivy .tool-versions
