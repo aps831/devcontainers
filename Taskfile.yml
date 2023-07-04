@@ -7,19 +7,6 @@ tasks:
     desc: Run Trunk check
     cmds:
       - trunk check
-  static:
-    summary: Run static analysis check
-    desc: Run static analysis check
-    cmds:
-      - semgrep --config=auto .
-  security:
-    summary: Run security check
-    desc: Run security check
-    cmds:
-      - trivy config .
-      - trivy fs .
-      - semgrep --config=p/security-audit .
-      - semgrep --config=p/secrets .
   tool-versions:upgrade:repo:
     summary: Upgrade version in .tool-versions
     desc: Upgrade version in .tool-versions
@@ -52,3 +39,33 @@ tasks:
         vars:
           OWNER: go-task
           NAME: task
+  semgrep:auto:
+    summary: Run semgrep static analysis with auto config
+    desc: Run semgrep static analysis with auto config
+    silent: true
+    cmds:
+      - semgrep --config=auto .
+  semgrep:security-audit:
+    summary: Run semgrep static analysis with security-audit config
+    desc: Run semgrep static analysis with security-audit config
+    silent: true
+    cmds:
+      - semgrep --config=p/security-audit .
+  semgrep:secrets:
+    summary: Run semgrep static analysis with secrets config
+    desc: Run semgrep static analysis with secrets config
+    silent: true
+    cmds:
+      - semgrep --config=p/secrets .
+  trivy:fs:
+    summary: Run trivy fs check
+    desc: Run trivy fs check
+    silent: true
+    cmds:
+      - trivy fs .
+  trivy:config:
+    summary: Run trivy config check
+    desc: Run trivy config check
+    silent: true
+    cmds:
+      - trivy config .
