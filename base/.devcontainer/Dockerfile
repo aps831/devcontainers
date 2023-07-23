@@ -4,6 +4,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/base@sha256:547a050dcfabd12be89ec3ed
 # Packages
 RUN apt-get update \
      && apt-get -y install --no-install-recommends \
+        age \
         bash-completion \
         fzf \
         fontconfig \
