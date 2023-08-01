@@ -1,12 +1,6 @@
 ---
 version: "3"
 tasks:
-  # Static Analysis
-  check:
-    summary: Run Trunk check
-    desc: Run Trunk check
-    cmds:
-      - trunk check
   tool-versions:upgrade:repo:
     summary: Upgrade version in .tool-versions
     desc: Upgrade version in .tool-versions
