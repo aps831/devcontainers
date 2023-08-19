@@ -1,10 +1,7 @@
 {
     "name": "Base",
     "build": {
-        "dockerfile": "Dockerfile",
-        "args": {
-            "NODE_VERSION": "node_16.x"
-        }
+        "dockerfile": "Dockerfile"
     },
     "features": {
         "ghcr.io/devcontainers/features/github-cli:1": {},
