@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # pin@v3.1.0
 
-      - uses: actions/setup-node@969bd2663942d722d85b6a8626225850c2f7be4b # pin@v3.5.0
+      - uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # pin@v3.8.1
         with:
           node-version: "16"
 
