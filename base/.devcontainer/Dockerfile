@@ -9,6 +9,7 @@ RUN apt-get update \
         fzf \
         fontconfig \
         gettext-base \
+        fakeroot \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/*
 
