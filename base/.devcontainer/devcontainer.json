@@ -9,6 +9,8 @@
         "ghcr.io/devcontainers/features/common-utils:2": {},
         "ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {},
         "ghcr.io/aps831/devcontainers-features/delta:1": {},
+        "ghcr.io/aps831/devcontainers-features/doppler:1": {},
+        "ghcr.io/aps831/devcontainers-features/doppler-asdf:1": {},
         "ghcr.io/aps831/devcontainers-features/gitleaks:1": {},
         "ghcr.io/aps831/devcontainers-features/gitmkver:1": {}
     },
