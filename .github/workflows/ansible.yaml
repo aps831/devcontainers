@@ -2,12 +2,12 @@ name: Generate Ansible Dev Container Image
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0 20 * *'
+    - cron: "0 0 20 * *"
   push:
     branches:
-      - 'master'
+      - "master"
     paths:
-      - 'ansible/**'
+      - "ansible/**"
   workflow_run:
     workflows: [Generate Base Dev Container Image]
     types:
@@ -18,5 +18,6 @@ permissions:
 jobs:
   devcontainer:
     uses: ./.github/workflows/generate-devcontainer-image.yaml
+    if: ${{ github.event.workflow_run.conclusion != 'failure' }}
     with:
       devcontainername: "ansible"
