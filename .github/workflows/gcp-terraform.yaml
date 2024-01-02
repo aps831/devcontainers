@@ -1,3 +1,4 @@
+---
 name: Generate GCP Terraform Dev Container Image
 on:
   workflow_dispatch:

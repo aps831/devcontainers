@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
   schedule:
     - cron: "0 0 1 * *"
+permissions:
+  actions: write
 jobs:
   delete:
-    permissions:
-      actions: write
     uses: aps831/workflows/.github/workflows/delete-workflow-runs.yaml@master

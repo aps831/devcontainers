@@ -1,3 +1,4 @@
+---
 name: Generate Dev Container Image
 on:
   workflow_call:

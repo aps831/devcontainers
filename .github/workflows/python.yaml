@@ -1,3 +1,4 @@
+---
 name: Generate Python Dev Container Image
 on:
   workflow_dispatch:

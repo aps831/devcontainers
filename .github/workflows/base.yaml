@@ -1,4 +1,5 @@
 # This name is used to trigger other workflows
+---
 name: Generate Base Dev Container Image
 on:
   workflow_dispatch:

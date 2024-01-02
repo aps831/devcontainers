@@ -5,10 +5,10 @@ on:
   push:
     branches:
       - "master"
-jobs:
-  scan:
-    uses: aps831/workflows/.github/workflows/grype-fs-scan.yaml@master
 permissions:
   contents: read
   issues: read
   pull-requests: read
+jobs:
+  scan:
+    uses: aps831/workflows/.github/workflows/grype-fs-scan.yaml@master

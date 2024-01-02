@@ -1,7 +1,5 @@
 ---
-name: Permissions Advisor (Run)
-permissions:
-  actions: read
+name: Permissions Advisor
 on:
   workflow_dispatch:
     inputs:
@@ -14,6 +12,8 @@ on:
         required: false
         type: number
         default: 10
+permissions:
+  actions: read
 jobs:
   advisor:
     uses: aps831/workflows/.github/workflows/permissions-advisor.yaml@master
