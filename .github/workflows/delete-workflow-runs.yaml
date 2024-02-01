@@ -9,3 +9,5 @@ permissions:
 jobs:
   delete:
     uses: aps831/workflows/.github/workflows/delete-workflow-runs.yaml@master
+    permissions:
+      contents: read
