@@ -4,8 +4,7 @@ on:
   pull_request: {}
 permissions:
   contents: read
-  issues: read
-  pull-requests: read
+  checks: write
 jobs:
   trunk:
     uses: aps831/workflows/.github/workflows/trunk.yaml@master
