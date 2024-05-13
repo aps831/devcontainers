@@ -1,5 +1,5 @@
 # debian-11
-FROM mcr.microsoft.com/vscode/devcontainers/base@sha256:547a050dcfabd12be89ec3ed62ebadfc8b0b215361ba76c4a710776ef45074de
+FROM mcr.microsoft.com/vscode/devcontainers/base@sha256:f4860362e59f0e1bb7d5a08486e528f29f617cfc5987e54613e6df20b436ff36
 
 # Packages
 RUN apt-get update \
