@@ -16,6 +16,9 @@ permissions:
   packages: write
 jobs:
   devcontainer:
-    uses: ./.github/workflows/generate-devcontainer-image.yaml
+    permissions:
+      contents: read
+      packages: write
+    uses: aps831/workflows/.github/workflows/generate-devcontainer-image.yaml@master
     with:
       devcontainername: "base"
