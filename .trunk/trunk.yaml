@@ -1,24 +1,24 @@
 version: 0.1
 cli:
-  version: 1.19.0
+  version: 1.22.3
 lint:
   disabled:
     - terraform-validate
   enabled:
-    - checkov@3.1.67
-    - terrascan@1.18.11
-    - trufflehog@3.63.10
-    - trivy@0.48.3
-    - yamllint@1.33.0
+    - checkov@3.2.236
+    - terrascan@1.19.1
+    - trufflehog@3.81.9
+    - trivy@0.54.1
+    - yamllint@1.35.1
     - git-diff-check
-    - taplo@0.8.1
-    - actionlint@1.6.26
-    - gitleaks@8.18.1
+    - taplo@0.9.3
+    - actionlint@1.7.1
+    - gitleaks@8.18.4
     - hadolint@2.12.0
-    - markdownlint@0.38.0
-    - prettier@3.2.4
-    - semgrep@1.57.0
-    - shellcheck@0.9.0
+    - markdownlint@0.41.0
+    - prettier@3.3.3
+    - semgrep@1.85.0
+    - shellcheck@0.10.0
     - shfmt@3.6.0
 runtimes:
   enabled:
@@ -41,8 +41,8 @@ actions:
 plugins:
   sources:
     - id: aps831
-      ref: v2.2.1
+      ref: v2.4.1
       uri: https://github.com/aps831/trunk-io-plugins
     - id: trunk
-      ref: v1.4.2
+      ref: v1.6.2
       uri: https://github.com/trunk-io/plugins
