@@ -6,7 +6,5 @@ This project defines devcontainer images for:
 -   aws-terraform;
 -   gcp-terraform;
 -   java-maven;
--   node;
--   operations-reports-frontend.
-
-User specific config should be completed using a public dotfiles repository. For example, https://github.com/aps831/dotfiles.
+-   node.
+-   User specific config should be completed using a public dotfiles repository. For example, https://github.com/aps831/dotfiles.
