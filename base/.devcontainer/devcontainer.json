@@ -11,8 +11,7 @@
         "ghcr.io/aps831/devcontainers-features/delta:1": {},
         "ghcr.io/aps831/devcontainers-features/doppler:1": {},
         "ghcr.io/aps831/devcontainers-features/doppler-asdf:1": {},
-        "ghcr.io/aps831/devcontainers-features/gitleaks:1": {},
-        "ghcr.io/aps831/devcontainers-features/gitmkver:1": {}
+        "ghcr.io/aps831/devcontainers-features/gitleaks:1": {}
     },
     "remoteEnv": {
         "DEVCONTAINERS": "true"
