@@ -21,4 +21,6 @@ jobs:
       packages: write
     uses: aps831/workflows/.github/workflows/generate-devcontainer-image.yaml@master
     with:
-      devcontainername: "base"
+      devcontainer-name: "base"
+    secrets:
+      ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}

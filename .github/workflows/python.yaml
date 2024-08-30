@@ -24,4 +24,6 @@ jobs:
     uses: aps831/workflows/.github/workflows/generate-devcontainer-image.yaml@master
     if: ${{ github.event.workflow_run.conclusion != 'failure' }}
     with:
-      devcontainername: "python"
+      devcontainer-name: "python"
+    secrets:
+      ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
