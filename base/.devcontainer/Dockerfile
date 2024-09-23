@@ -10,6 +10,7 @@ RUN apt-get update \
         fontconfig \
         gettext-base \
         fakeroot \
+        firefox-esr \
      && apt-get clean \
      && rm -rf /var/lib/apt/lists/*
 
