@@ -1,10 +1,14 @@
 {
     "name": "Ansible",
     "image": "ghcr.io/aps831/devcontainers/base:latest",
-    "settings": {
-        "files.associations": {
-            "**/*.yaml": "ansible",
-            "**/*.yml": "ansible"
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "files.associations": {
+                    "**/*.yaml": "ansible",
+                    "**/*.yml": "ansible"
+                }
+            }
         }
     },
     "features": {
