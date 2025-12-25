@@ -19,5 +19,4 @@ RUN apt-get update \
        liblzma-dev \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
-COPY --chown=vscode:vscode config.toml "/home/vscode/.config/pypoetry/config.toml"
 USER vscode
