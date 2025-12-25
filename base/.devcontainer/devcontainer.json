@@ -8,7 +8,6 @@
         "ghcr.io/eitsupi/devcontainer-features/go-task:1": {},
         "ghcr.io/devcontainers/features/common-utils:2": {},
         "ghcr.io/eitsupi/devcontainer-features/jq-likes:2": {},
-        "ghcr.io/aps831/devcontainers-features/asdf-plugin-manager-asdf:1": {},
         "ghcr.io/aps831/devcontainers-features/delta:1": {},
         "ghcr.io/aps831/devcontainers-features/doppler:1": {},
         "ghcr.io/aps831/devcontainers-features/doppler-asdf:1": {},
