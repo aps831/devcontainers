@@ -1,9 +1,10 @@
 {
     "name": "Base",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
+    "image": "mcr.microsoft.com/vscode/devcontainers/base@sha256:800ed0a5e8679cf1bd2a1ec1ef01d35cc497d6fda21ed8811b04fb9f938def6e",
     "features": {
+        "ghcr.io/devcontainers-extra/features/apt-get-packages:1": {
+            "packages": "age,bash-completion,fzf,fontconfig,gettext-base,fakeroot,firefox-esr"
+        },
         "ghcr.io/devcontainers/features/github-cli:1": {},
         "ghcr.io/eitsupi/devcontainer-features/go-task:1": {},
         "ghcr.io/devcontainers/features/common-utils:2": {},
