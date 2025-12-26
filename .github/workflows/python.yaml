@@ -9,10 +9,6 @@ on:
       - "master"
     paths:
       - "python/**"
-  workflow_run:
-    workflows: [Generate Base Dev Container Image]
-    types:
-      - completed
 permissions:
   contents: read
   packages: write
