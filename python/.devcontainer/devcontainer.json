@@ -1,8 +1,6 @@
 {
     "name": "python",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
+    "image": "ghcr.io/aps831/devcontainers/base:latest",
     "features": {
         "ghcr.io/aps831/devcontainers-features/semgrep:1": {},
         "ghcr.io/aps831/devcontainers-features/task-asdf:1": {},
