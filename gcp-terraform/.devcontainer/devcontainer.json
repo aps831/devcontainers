@@ -24,6 +24,6 @@
         "ghcr.io/aps831/devcontainers-features/trivy-asdf:1": {},
         "ghcr.io/devcontainers-extra/features/terraform-asdf:2": {},
         "ghcr.io/devcontainers-extra/features/terraform-ls-asdf:2": {},
-        "ghcr.io/dhoeric/features/google-cloud-cli:1": {}
+        "ghcr.io/jajera/features/gcloud-cli:1": {}
     }
 }
