@@ -15,10 +15,6 @@
         "ghcr.io/aps831/devcontainers-features/gitleaks:1": {},
         "ghcr.io/aps831/devcontainers-features/cosign-asdf:1": {},
         "ghcr.io/aps831/devcontainers-features/pet:1": {},
-        "ghcr.io/devcontainers/features/docker-in-docker:2": {
-            "version": "latest",
-            "moby": false
-        },
         "ghcr.io/aps831/devcontainers-features/semgrep:1": {},
         "ghcr.io/aps831/devcontainers-features/task-asdf:1": {},
         "ghcr.io/aps831/devcontainers-features/trivy-asdf:1": {},
